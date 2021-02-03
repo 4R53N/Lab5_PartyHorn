@@ -1,0 +1,23 @@
+name: Gif Comment
+
+on:
+  
+  # Allows you to run this workflow manually from the Actions tab
+  issues:
+    types: [opened]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  comment:
+    if: github.event_name == 'issues
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Funny comments
+        uses: Marta83/funny-comment-action@v2.1
+        id: FunnyComment
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
+          comment_type: 'gif'
