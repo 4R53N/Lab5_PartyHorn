@@ -10,7 +10,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   comment:
-    if: github.event_name == 'issues
+    if: github.event_name == 'issues'
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
